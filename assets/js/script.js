@@ -2,13 +2,17 @@
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
+// DONE
 var today = moment();
+console.log(today);
+console.log(typeof today);
 $("#currentDay").text(today.format("MMM Do, YYYY"));
 
 //moment() go get the current day dynamically
 
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
+// DONE?  Does this need to be created using jquery instead of writing HTML?
 
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
