@@ -2,7 +2,12 @@
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
-var currentDay = document.getElementById("currentDay")
+var today = moment();
+console.log(today);
+$("#currentDay").text(today.format("MMM Do, YYYY"));
+
+
+document.getElementById("")
 //moment() go get the current day dynamically
 
 // WHEN I scroll down
