@@ -22,15 +22,67 @@
     <title>Work Day Scheduler</title>
   </head>
 
+  <!-- remove bg-dark at end, temporary for eye strain reduction -->
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-    </div>
+    <main class="container">
+      <!-- To-do:  
+        insert time using moment().  
+        figure out how to add the lock icon from the mockup.  
+        do I have to create the elements with jquery?  
+        add functionality:
+          set textarea to have dynamic css class based upon current time (using moment() so app knows time)
+           -->
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">9AM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">10AM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">11AM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">12PM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">1PM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">2PM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">3PM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">4PM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+      <section class="row col-12">
+        <div class="hour col-1 text-center pt-2">5PM</div>
+        <textarea class="row col-10 bg-dark"></textarea>
+        <div class="saveBtn col-1 text-center pt-4">Lock</div>
+      </section>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
