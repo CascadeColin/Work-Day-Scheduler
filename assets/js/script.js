@@ -4,9 +4,27 @@
 // THEN the current day is displayed at the top of the calendar
 // DONE
 var today = moment();
-console.log(today);
-console.log(typeof today);
-$("#currentDay").text(today.format("MMM Do, YYYY"));
+var hour;
+//sets first hour of day in a variable to increment
+var startHour = 9;
+var $hour = $(".hour");
+
+//sets current day and time in header
+$("#currentDay").text(today.format("MMM Do, YYYY, hh:mm:ss"));
+
+
+hour = today.set('hour', startHour);
+$hour.text(hour.format("hA"));
+
+$hour.each(function(index) {
+    console.log(startHour)
+    console.log(index + ": " + $(this).text() );
+    startHour++;
+    console.log(startHour)
+  });
+
+
+//dynamically update following .hour tags incrementing++ by array class
 
 //moment() go get the current day dynamically
 

@@ -1,7 +1,13 @@
+/* reset default button so it only uses bootstrap */
 button {
   border: none;
   background-color: transparent;
   font-family: inherit;
   padding: 0;
   cursor: pointer;
+}
+
+/* because the default is ugly and clips into my buttons */
+textarea:focus {
+  outline: none !important;
 }
