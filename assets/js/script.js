@@ -22,7 +22,7 @@ for (i=0; i<$hour.length; i++) {
 }
 
 // This changed 9am to unix timestamp on the actual web app...wtf?
-// console.log($hour.eq().text(hour.format("X")));
+// console.log($hour.eq(0).text(hour.format("X")));
 
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
