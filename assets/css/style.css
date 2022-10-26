@@ -75,8 +75,8 @@ textarea {
   color: white;
 }
 
-/* i tag? */
 .saveBtn:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+  background-color: #047c98; 
 }
