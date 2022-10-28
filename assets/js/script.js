@@ -21,8 +21,6 @@ for (i=0; i<$hour.length; i++) {
   hour = today.set('hour', timeBlockHour);
   $hour.eq(i).text(hour.format("hA"));
   nineToFive.push(parseInt(hour.format('X')));
-  
-  // console.log(parseInt(hour.format('X')));
   timeBlockHour++;
 }
 
