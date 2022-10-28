@@ -1,7 +1,7 @@
-var today = moment();
+var currentTime = moment();
 var text = "Current unix timestamp: ";
-var todayNumber = parseInt(today.format('X'));
-console.log(today.format('X'));
+var todayNumber = parseInt(currentTime.format('X'));
+//current time as a number
 console.log(todayNumber);
 
 var nineToFive = [];
@@ -13,12 +13,16 @@ var $hour = $(".hour");
 var $today =$("#currentDay")
 
 //sets current day and time in header
-$today.text(today.format("MMM Do, YYYY, hh:mmA"));
-// $today.text(today.format("X"));
+function displayTime() {
+  var now = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+  $today.text(now);
+}
+setInterval(displayTime, 1000);
+
 
 //sets the time of each timeblock dynamically so it can be compared to unix timestamp
 for (i=0; i<$hour.length; i++) {
-  hour = today.set('hour', timeBlockHour);
+  hour = currentTime.set('hour', timeBlockHour);
   $hour.eq(i).text(hour.format("hA"));
   nineToFive.push(parseInt(hour.format('X')));
   timeBlockHour++;
@@ -29,16 +33,22 @@ console.log (nineToFive);
 
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// PSEUDO
 
+// PSEUDO
 // Compare to unix timestamp
-// if (today > hour) {
-//   apply class .past
-// } else if ( today = hour) {
-//   apply class .present
+// all class applied, hide the unwanted ones?
+
+//for (i=0;i<nineToFive.length;i++) {
+// if (nineToFive[i] < currentTime) {
+//   apply .past
+// } else if (nineToFive[i] = currentTime) {
+//   apply .present
 // } else {
-//   apply class .future
+//   apply .future
 // }
+// }
+
+
 
 // WHEN I click into a timeblock
 // THEN I can enter an event
