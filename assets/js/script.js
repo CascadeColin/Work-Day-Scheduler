@@ -92,17 +92,9 @@ function timeCheck() {
   }
 }
 
-timeCheck();
-
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-
-//eventlistener("click")
-//buttonEl localStorage set ("key", "value = string in textarea")
 $saveBtn.click(function() {
   //check to see if button was already clicked
   if (textArr[0] == undefined) {
-    console.log(" undefined");
     for (i=0;i<$text.length;i++) {
       var $temp = $text.eq(i).val();
       textArr.push($temp);
@@ -113,20 +105,22 @@ $saveBtn.click(function() {
       textArr[i] = $temp;
     }
   }
-  console.log(textArr)
-  localStorage.setItem("9AM", textArr[0]);
-  localStorage.setItem("10AM", textArr[1]);
-  localStorage.setItem("11AM", textArr[2]);
-  localStorage.setItem("12PM", textArr[3]);
-  localStorage.setItem("1PM", textArr[4]);
-  localStorage.setItem("2PM", textArr[5]);
-  localStorage.setItem("3PM", textArr[6]);
-  localStorage.setItem("4PM", textArr[7]);
-  localStorage.setItem("5PM", textArr[8]);
+  localStorage.setItem("0", textArr[0]);
+  localStorage.setItem("1", textArr[1]);
+  localStorage.setItem("2", textArr[2]);
+  localStorage.setItem("3", textArr[3]);
+  localStorage.setItem("4", textArr[4]);
+  localStorage.setItem("5", textArr[5]);
+  localStorage.setItem("6", textArr[6]);
+  localStorage.setItem("7", textArr[7]);
+  localStorage.setItem("8", textArr[8]);
 });
 
 //on page load, input local storage to relevant textarea
-function init() {}
-
-// WHEN I refresh the page
-// THEN the saved events persist
+function init() {
+  timeCheck();
+  for (i=0;i<$text.length;i++) {
+    $text.eq(i).text(localStorage.getItem(i))
+  }
+}
+init();
