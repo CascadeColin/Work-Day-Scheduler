@@ -1,9 +1,6 @@
 var currentTime = moment();
 var text = "Current unix timestamp: ";
 var todayNumber = parseInt(currentTime.format("X"));
-//current time as a number
-
-
 var nineToFive = [];
 var hourUnixTimestamp;
 var hour;
@@ -11,6 +8,9 @@ var hour;
 var timeBlockHour = 9;
 var $hour = $(".hour");
 var $today = $("#currentDay");
+var $saveBtn = $(".saveBtn");
+var $text = $(".text")
+var textArr = [];
 
 //sets current day and time in header
 function displayTime() {
@@ -91,17 +91,42 @@ function timeCheck() {
     timeBlockHour++;
   }
 }
+
 timeCheck();
-
-
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-
-// WHEN I click into a timeblock
-// THEN I can enter an event
 
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
+
+//eventlistener("click")
+//buttonEl localStorage set ("key", "value = string in textarea")
+$saveBtn.click(function() {
+  //check to see if button was already clicked
+  if (textArr[0] == undefined) {
+    console.log(" undefined");
+    for (i=0;i<$text.length;i++) {
+      var $temp = $text.eq(i).val();
+      textArr.push($temp);
+    }
+  } else {
+    for (i=0;i<$text.length;i++) {
+      var $temp = $text.eq(i).val();
+      textArr[i] = $temp;
+    }
+  }
+  console.log(textArr)
+  localStorage.setItem("9AM", textArr[0]);
+  localStorage.setItem("10AM", textArr[1]);
+  localStorage.setItem("11AM", textArr[2]);
+  localStorage.setItem("12PM", textArr[3]);
+  localStorage.setItem("1PM", textArr[4]);
+  localStorage.setItem("2PM", textArr[5]);
+  localStorage.setItem("3PM", textArr[6]);
+  localStorage.setItem("4PM", textArr[7]);
+  localStorage.setItem("5PM", textArr[8]);
+});
+
+//on page load, input local storage to relevant textarea
+function init() {}
 
 // WHEN I refresh the page
 // THEN the saved events persist
